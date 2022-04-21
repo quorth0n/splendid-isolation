@@ -1,0 +1,11 @@
+Decisions;;;;;;;;;;;;;;;;;;;;;;;x
+begin_isolation_eng_title;Pax Britannica;;;;;;;;;;;;;;;;;;;;;;;x
+begin_isolation_eng_desc;Latin for 'British Peace'\n\n The Napoleonic Wars left Great Britain as the most powerful naval country in the world, with no meaningful rivals. The country's economic and strategic strength was buttressed by the fleet, localized military action was a staple of the not-entirely-peaceful 'Pax Britannica'. In addition, the threat of naval force was a significant factor in diplomacy. \n\nDuring the late 19th century, Britain's primary goal in foreign policy was to maintain the balance of power in Europe and to intervene if that balance was upset. Its secondary goal was to protect its overseas interest in the colonies and dominions, as free trade kept the Empire alive. The sea routes to the colonies, especially those linking Britain to India were vital. \n\nùRNOTE: This will cause Britain to reject all alliances with great powers unless it is threatened by another rising great power.ùW;;;;;;;;;;;;;;;;;;;;;;;x
+Events;;;;;;;;;;;;;;;;;;;;;;;x
+EVTNAME6016815;Splendid Isolation;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTDESC6016815;Enabling this feature will enable Splendid Isolation for the UK, it will break alliances with any greater power except for Portugal, Ottomans, Belgium or Japan.;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVT6016815OPTA;I want a Isolationist UK.;;;;;;;;;;;;;;;;;;x;;;;
+EVT6016815OPTB;I do not want this.;;;;;;;;;;;;;;;;;;x;;;;
+EVTNAME99957;The End of Splendid Isolation;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
+EVTDESC99957;The balance of power in Europe has been upset, remaining isolationalist will no longer beneficial to Great Britain and her empire. We must quickly search for an alliance with other great powers and restore the balance of power in the continent.;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+EVT99957OPTA;Pax Britannica is over..?;;;;;;;;;;;;;;;;;;;;;;;;;;;x

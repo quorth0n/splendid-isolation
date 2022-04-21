@@ -1,0 +1,105 @@
+# Enable/Disable Splendid Isolation
+country_event = {
+	id = 6016815
+	title = "EVTNAME6016815"
+	desc = "EVTDESC6016815"
+	picture = "abraham_speech"
+	major = yes
+		
+	trigger = {
+		ai = no
+		NOT = { has_global_flag = isolation_setup }
+	}
+	
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT6016814OPTA"
+		set_global_flag = yes_isolation
+		set_global_flag = isolation_setup
+	}
+	
+	option = {
+		name = "EVT6016815OPTB"
+		set_global_flag = isolation_setup
+	}
+}
+
+# The End of Splendid Isolation
+country_event = {
+	id = 99957
+	title = "EVTNAME99957"
+	desc = "EVTDESC99957"
+	major = yes
+	
+	trigger = {
+		tag = ENG
+		has_country_flag = isolation_active
+		
+		OR = {
+			has_global_flag = french_nzl
+			AND = {
+				NOT = { exists = GCF }
+				NOT = { exists = GER }
+				year = 1885
+			}
+			exists = RHI
+			PRU_575 = {
+				OR = { 
+					owned_by = FRA 
+					owned_by = BOR
+				}
+			}
+			AND = {
+				FRA_412 = {
+					NOT = {
+						owned_by = FRA 
+						owned_by = BOR
+					}
+				}
+				FRA_411 = {
+					NOT = {
+						owned_by = FRA 
+						owned_by = BOR
+					}
+				}
+			}
+			498 = { OR = { owned_by = FRA owned_by = BOR } }
+			SPA_492 = { OR = { owned_by = FRA owned_by = BOR } }
+			ENG_300 = { NOT = { owned_by = ENG } }
+			ENG_296 = { NOT = { owned_by = ENG } }
+			ENG_291 = { NOT = { owned_by = ENG } }
+			ENG_284 = { NOT = { owned_by = ENG } }
+			ENG_280 = { NOT = { owned_by = ENG } }
+			ENG_277 = { NOT = { owned_by = ENG } }
+			exists = SCO
+			exists = WHA
+			AND = {
+				exists = IRE
+				NOT = { year = 1905 }
+				has_recently_lost_war = yes
+			}
+			NOT = { exists = BEL }
+			NOT = { rank = 1 }
+			has_global_flag = EIC_independence
+
+			year = 1890
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "EVT99957OPTA"
+		prestige = -25
+		remove_country_flag = isolation_active
+		any_greater_power = {
+			limit = { NOT = { truce_with = ENG } }
+			relation = {
+				who = ENG
+				value = 100
+			}
+		}
+	}
+}

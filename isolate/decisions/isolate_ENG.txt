@@ -1,0 +1,102 @@
+political_decisions = {
+    begin_isolation_active = {
+		picture = "pax_britannica"
+		potential = { 
+			tag = ENG
+			has_global_flag = yes_isolation
+			NOT = {
+				has_country_flag = isolation_active
+			}
+		}
+		allow = {
+			rank = 1
+		}
+		effect = {
+			set_country_flag = isolation_active
+            any_country = {
+                limit = { has_country_flag = orgin }
+                country_event = 2
+            }
+		}
+
+        ai_will_do = { factor = 1 }
+	} 
+
+    break_alliance_AI = {
+        picture = "pax_britannica"
+        potential = { 
+            tag = ENG
+            NOT = { exists = IRE }
+            ai = yes
+            has_country_flag = isolation_active
+        }
+        allow = {
+            tag = ENG
+            any_greater_power = { alliance_with = ENG }
+            NOT = { exists = IRE }
+            has_country_flag = isolation_active
+            NOT = { exists = GER }
+            NOT = { exists = GCF }
+            rank = 1
+            NOT = { year = 1870 }
+            NOT = {
+                AND = {
+                    EGY = { war_with = TUR }
+                    war_with = EGY
+                    OR = { 
+                        war_with = FRA
+                        war_with = BOR
+                    }
+                }
+            }
+            OR = {
+                TUR = {
+                    is_greater_power = yes
+                    NOT = { alliance_with = THIS }
+                }
+                TUR = { is_greater_power = no }
+            }
+            OR = {
+                JAP = {
+                    is_greater_power = yes
+                    NOT = { alliance_with = THIS }
+                }
+                JAP = { is_greater_power = no }
+            }
+            OR = {
+                BEL = {
+                    is_greater_power = yes
+                    NOT = { alliance_with = THIS }
+                }
+                BEL = { is_greater_power = no }
+            }
+            OR = {
+                POR = {
+                    is_greater_power = yes
+                    NOT = { alliance_with = THIS }
+                }
+                POR = { is_greater_power = no }
+            }
+        }
+        
+        effect = {
+            any_greater_power = {
+                limit = {
+                    NOT = { 
+                        tag = JAP
+                        tag = BEL
+                        tag = TUR
+                    }
+                    alliance_with = ENG
+                }
+                leave_alliance = THIS
+                relation = {
+                    who = THIS
+                    value = -150
+                }
+            }
+        }
+        
+        ai_will_do = { factor = 1 }
+    }
+}
